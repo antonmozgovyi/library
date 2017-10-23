@@ -1,16 +1,25 @@
 import React, { Component } from 'react'
-import NavigationLink from './NavigationLink'
+import { Bootstrap, Navbar, Nav, NavItem } from 'react-bootstrap'
 
 const links = ['All', 'By Authors', 'By Genre']
 
 class NavigationBar extends Component {
   render () {
     return (
-      <ul>
-        {links.map(link => 
-          (<NavigationLink text={link} />)
-        )}
-      </ul>
+      <Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>
+            Home Library
+          </Navbar.Brand>
+        </Navbar.Header>
+        <Navbar.Collapse>
+          <Nav>
+            {links.map((link) => (
+              <NavItem>{link}</NavItem>
+            ))}
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     )
   }
 }

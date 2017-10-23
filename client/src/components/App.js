@@ -7,8 +7,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div>"Hello!"</div>
-
         <NavigationBar />
       </div>
     )
