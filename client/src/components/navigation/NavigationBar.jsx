@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import { Bootstrap, Navbar, Nav, NavItem } from 'react-bootstrap'
+import NavigationLink from './NavigationLink'
 
-const links = ['All', 'By Authors', 'By Genre']
+const links = [
+  { text: 'All', to: '/', exact: true },
+  { text: 'By Authors', to: '/authors'},
+  { text: 'By Genre', to: '/genres'}
+]
 
 class NavigationBar extends Component {
   render () {
@@ -15,7 +20,7 @@ class NavigationBar extends Component {
         <Navbar.Collapse>
           <Nav>
             {links.map((link) => (
-              <NavItem>{link}</NavItem>
+              <NavigationLink key={link.to} {...link} />
             ))}
           </Nav>
         </Navbar.Collapse>
